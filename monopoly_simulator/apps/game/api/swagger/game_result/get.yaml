@@ -1,0 +1,19 @@
+tags:
+  - "Resultado do jogo"
+summary: "Mostra o resultado do jogo"
+description: "Mostra o resultado do jogo"
+responses:
+  "200":
+    description: "Resultado do jogo"
+    type: "object"
+    properties:
+      vencedor:
+        type: string
+        example: "cauteloso"
+        description: "O tipo do jogador vencedor"
+      jogadores:
+        type: array
+        items:
+          type: string
+          example: "cauteloso"
+        description: "Lista dos tipos de jogadores participantes"
