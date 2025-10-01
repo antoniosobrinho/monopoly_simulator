@@ -1,0 +1,10 @@
+services:
+  monopolysimulator:
+    image: monopolysimulator
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    command: ["sh", "-c", "pip install debugpy -t /tmp && python /tmp/debugpy --wait-for-client --listen 0.0.0.0:5678 monopoly_simulator/manage.py runserver 0.0.0.0:8080 --nothreading --noreload"]
+    ports:
+      - 8080:8080
+      - 5678:5678
